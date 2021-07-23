@@ -22,5 +22,5 @@ public class PassengerTest {
     public void passengerHasBags() {
         assertEquals(2, passenger.getNumberOfBags());
     }
-    
+
 }
