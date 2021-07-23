@@ -76,6 +76,10 @@ public class FlightTest {
         flight.bookPassenger(passenger);
         flight.bookPassenger(passenger);
         assertEquals(121, flight.returnEmptySeats());
+    }
 
+    @Test
+    public void canGetPlanesWeight() {
+        assertEquals(183500, flight.getPlaneWeight());
     }
 }

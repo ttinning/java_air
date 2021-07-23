@@ -1,7 +1,7 @@
 public enum PlaneType {
 
     AIRBUSA320(124, 183500),
-    BOEING747(410, 83000);
+    BOEING747(410, 830000);
 
     private int seatCapacity;
     private int weight;

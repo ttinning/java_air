@@ -15,6 +15,7 @@ public class Flight {
     private String destination;
     private String departure;
     private String timeOfDeparture;
+    private int totalBags;
 
     public Flight(String flightNumber, PlaneType planeType, String destination, String departure, String timeOfDeparture) {
         this.flightNumber = flightNumber;
@@ -25,6 +26,7 @@ public class Flight {
         this.pilots = new ArrayList<>();
         this.cabinCrew = new ArrayList<>();
         this.passengers = new ArrayList<>();
+        this.totalBags = 0;
     }
 
     public String getFlightNumber() {
@@ -33,6 +35,13 @@ public class Flight {
 
     public PlaneType getPlaneType() {
         return this.planeType;
+    }
+    public int getPlaneWeight() {
+        return this.planeType.getWeight();
+    }
+
+    public int getTotalPlaneCapacity() {
+        return this.planeType.getSeatCapacity();
     }
 
     public String getDestination() {
@@ -70,10 +79,15 @@ public class Flight {
     public void bookPassenger(Passenger passenger) {
         if (this.returnEmptySeats() > 0) {
             passengers.add(passenger);
+            this.totalBags += passenger.getNumberOfBags();
         }
     }
 
     public ArrayList<Passenger> getPassengers() {
         return this.passengers;
+    }
+
+    public int getTotalBags() {
+        return totalBags;
     }
 }
